@@ -1,0 +1,147 @@
+// Мінімальна ширина сторінки
+$minWidth: 320;
+// Ширина полотна (макету)
+$maxWidth: 1920;
+// Ширина обмежуючого контейнера (0 = немає обмеження)
+$maxWidthContainer: 1170;
+// Загальний відступ у контейнера
+// (30 = по 15px ліворуч і праворуч, 0 = немає відступу)
+$containerPadding: 30;
+// Ширина спрацьовування першого брейкпоінту
+$containerWidth: $maxWidthContainer + $containerPadding;
+
+
+
+// Підключення шрифтів
+@import "_fonts.scss";
+// Скидання стилів
+@import "_reset.scss";
+// Функції
+@import "_function.scss";
+// Компоненти, сторінки
+//@import "header.css";
+// Компоненти, сторінки
+//@import "_footer.scss";
+
+
+
+
+
+
+body {
+	font-size: toRem(16);
+}
+
+.wrapper {
+	overflow: clip;
+	min-height: 100%;
+	
+
+	display: flex;			//прижимаем футер книзу
+	flex-direction: column; //прижимаем футер книзу
+}
+.wrapper main {
+	flex-grow: 1;			//прижимаем футер книзу
+}
+
+
+// для усіх "__container" однаково
+[class*="__container"] {
+	max-width: 1270px;/* 1240 + 15 + 15 */
+	margin: 0 auto;
+	padding-left: 15px;
+	padding-right: 15px;
+/* 	max-width: #{$containerWidth}px;
+	padding-left: toRem(15);
+	padding-right: toRem(15); */
+}
+
+// REM - береться від глобального розміру шрифту
+// EM - береться від поточного або
+// успаткованого розміру шрифту
+
+
+//SCSS основні стилі 
+.hero {
+
+		// .hero__text
+		&__text {
+			//max-width: toRem(595);
+			max-width: 595px;
+		}
+		h2 {
+			color: #0d0d0d;
+			font-family: 'Poppins';
+			font-size: 60px;
+			font-weight: 700;
+			line-height: 110%;
+			margin-bottom: 20px;
+			& span {
+				color: #40DDB6;
+				font-family: 'Poppins';
+			}
+		}
+		&>*:last-child {
+			margin-bottom: 0;
+		}
+		// .hero__title
+		&__title {
+			color: #FFF;
+			font-family: 'Inter';
+			font-size: 18px;
+			font-weight: 600;
+			line-height: 146.187%;
+			margin-bottom: 10px;
+		}
+
+		// .hero__sub-title
+		&__sub-title {
+			color: #B9B9B9;
+			font-family: 'Inter';
+			font-size: 18px;
+			font-weight: 500;
+			line-height: 146.187%;
+			margin-bottom: 35px;
+		}
+
+		// .hero__button
+		&__button {
+			display: flex;
+		}
+
+		// .hero__left
+		&__left {
+			padding: 27px 21px;
+			background-color: #40DDB6;
+			color: #37393F;
+			text-align: center;
+			font-family: 'Inter';
+			font-size: 18px;
+			font-weight: 600;
+			text-transform: capitalize;
+			margin-right: 30px;
+		}
+
+		// .hero__right
+		&__right {
+			color: #FFF;
+			text-align: center;
+			font-family: 'Inter';
+			font-size: 18px;
+			font-weight: 600;
+			text-transform: capitalize;
+			display: flex;
+			gap: 10px;
+			&::before {
+				content: '';
+				display: inline-block;
+				background-image: url(../img/hero02.svg);
+				background-position: 0 0;
+				background-repeat: no-repeat;
+				background-size: contain;
+				width: 60px;
+				height: 60px;
+				flex: 0 0 60px;
+			}
+		}
+}
