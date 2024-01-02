@@ -104,76 +104,156 @@ body {
 }
 
 [class*=__container] {
-  max-width: 1270px; /* 1240 + 15 + 15 */
+  max-width: 79.375rem; /* 1240 + 15 + 15 */
   margin: 0 auto;
-  padding-left: 15px;
-  padding-right: 15px;
-  /* 	max-width: 1200px;
-  padding-left: toRem(15);
-  padding-right: toRem(15); */
+  /* 	max-width: 1200px; */
+  padding-left: 0.9375rem;
+  padding-right: 0.9375rem;
 }
 
+.hero {
+  content: "";
+  background-image: url(../img/hero01.jpg);
+  background-repeat: no-repeat;
+  background-position: top right;
+  background-size: cover;
+  width: 100%;
+  height: 100%;
+}
 .hero__text {
-  max-width: 595px;
+  max-width: 51.5625rem;
+  min-height: 50.9375rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  padding-left: 7.3125rem;
+  background-color: rgba(55, 57, 63, 0.91);
+  -webkit-backdrop-filter: blur 0.59375rem;
+          backdrop-filter: blur 0.59375rem;
+}
+@media (max-width: 75em) {
+  .hero__text {
+    padding: 2.5rem;
+    max-width: 34.375rem;
+    min-height: 32.1875rem;
+  }
+}
+@media (max-width: 47.9375em) {
+  .hero__text {
+    max-width: 25.9375rem;
+    min-height: 25.9375rem;
+  }
+}
+@media (max-width: 28.125em) {
+  .hero__text {
+    padding: 2.8125rem;
+  }
+}
+.hero__text > *:last-child {
+  margin-bottom: 0rem;
 }
 .hero h2 {
-  color: #0d0d0d;
+  color: #ffffff;
   font-family: "Poppins";
-  font-size: 60px;
+  font-size: 3.75rem;
+  margin-bottom: 0.3333333333em;
   font-weight: 700;
-  line-height: 110%;
-  margin-bottom: 20px;
+  line-height: 120%;
 }
-.hero h2 span {
-  color: #40ddb6;
+@media (max-width: 75em) {
+  .hero h2 {
+    font-size: 2.5rem;
+  }
+}
+@media (max-width: 47.9375em) {
+  .hero h2 {
+    font-size: 1.5625rem;
+  }
+}
+.hero span {
+  color: #40DDB6;
   font-family: "Poppins";
-}
-.hero > *:last-child {
-  margin-bottom: 0;
 }
 .hero__title {
-  color: #fff;
+  color: #ffffff;
   font-family: "Inter";
-  font-size: 18px;
+  font-size: 1.125rem;
+  margin-bottom: 0.5555555556em;
   font-weight: 600;
   line-height: 146.187%;
-  margin-bottom: 10px;
 }
 .hero__sub-title {
   color: #b9b9b9;
   font-family: "Inter";
-  font-size: 18px;
+  font-size: 1.125rem;
+  margin-bottom: 0.5142857143em;
   font-weight: 500;
   line-height: 146.187%;
-  margin-bottom: 35px;
+}
+@media (max-width: 47.9375em) {
+  .hero__sub-title {
+    font-size: 1.0625rem;
+  }
 }
 .hero__button {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  margin-bottom: 1.25rem;
+}
+@media (max-width: 47.9375em) {
+  .hero__button {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    gap: 1.25rem;
+  }
 }
 .hero__left {
-  padding: 27px 21px;
+  padding: 1.2857142857rem;
   background-color: #40ddb6;
   color: #37393f;
   text-align: center;
   font-family: "Inter";
-  font-size: 18px;
+  font-size: 1.125rem;
   font-weight: 600;
   text-transform: capitalize;
-  margin-right: 30px;
+  margin-right: 1.875rem;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+  border: 1px solid transparent;
+}
+.hero__left:hover {
+  background-color: rgba(255, 255, 255, 0.1921568627);
+  color: #ffffff;
+  border: 1px solid #40DDB6;
 }
 .hero__right {
-  color: #fff;
+  color: #ffffff;
   text-align: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   font-family: "Inter";
-  font-size: 18px;
+  font-size: 1.125rem;
   font-weight: 600;
   text-transform: capitalize;
+  text-decoration: underline;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  gap: 10px;
+  gap: 0.625rem;
 }
 .hero__right::before {
   content: "";
@@ -182,9 +262,9 @@ body {
   background-position: 0 0;
   background-repeat: no-repeat;
   background-size: contain;
-  width: 60px;
-  height: 60px;
+  width: 3.75rem;
+  height: 3.75rem;
   -webkit-box-flex: 0;
-      -ms-flex: 0 0 60px;
-          flex: 0 0 60px;
+      -ms-flex: 0 0 60/16rem;
+          flex: 0 0 60/16rem;
 }

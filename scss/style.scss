@@ -30,13 +30,11 @@ body {
 
 // для усіх "__container" однаково
 [class*="__container"] {
-  max-width: 1270px; /* 1240 + 15 + 15 */
-  margin: 0 auto;
-  padding-left: 15px;
-  padding-right: 15px;
-  /* 	max-width: #{$containerWidth}px;
+  	max-width: toRem(1270); /* 1240 + 15 + 15 */
+	margin: 0 auto;
+  /* 	max-width: #{$containerWidth}px; */
 	padding-left: toRem(15);
-	padding-right: toRem(15); */
+	padding-right: toRem(15);
 }
 
 // REM - береться від глобального розміру шрифту
@@ -45,74 +43,125 @@ body {
 
 //SCSS основні стилі
 .hero {
+	content: '';
+	background-image: url(../img/hero01.jpg);
+	background-repeat: no-repeat;
+	background-position: top right;
+	background-size: cover;
+	width: 100%;
+	height: 100%;
+
   // .hero__text
   &__text {
-    //max-width: toRem(595);
-    max-width: 595px;
+    max-width: toRem(825);
+	min-height: toRem(815);
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: flex-start;
+	padding-left: toRem(117);
+	background-color: rgba(55, 57, 63, 0.91);
+	backdrop-filter: blur toRem(9.5);
+
+	@media (max-width: toEm(1200)) {
+		padding: toRem(40);
+		max-width: toRem(550);
+		min-height: toRem(515);
+	}
+	@media (max-width: toEm(767)){
+		max-width: toRem(415);
+		min-height: toRem(415);
+	}
+	@media (max-width: toEm(450)){
+		padding: toRem(45);
+	}
+	& > *:last-child {
+		margin-bottom: toRem(0); //0px;
+	  }
   }
   h2 {
-    color: #0d0d0d;
+    color: #ffffff;
     font-family: "Poppins";
-    font-size: 60px;
+	font-size: toRem(60);
+	margin-bottom: toEm(20, 60);
     font-weight: 700;
-    line-height: 110%;
-    margin-bottom: 20px;
-    & span {
-      color: #40ddb6;
-      font-family: "Poppins";
-    }
+    line-height: 120%;
+	@media (max-width: toEm(1200)){
+		font-size: toRem(40);
+	}
+	@media (max-width: toEm(767)){
+		font-size: toRem(25);
+	}
   }
-  & > *:last-child {
-    margin-bottom: 0;
+  & span {
+	color: #40DDB6;
+	font-family: "Poppins";
   }
   // .hero__title
   &__title {
-    color: #fff;
+    color: #ffffff;
     font-family: "Inter";
-    font-size: 18px;
+    font-size: toRem(18); //18px;
+	margin-bottom: toEm(10, 18); //10px от 18px размера шрифта;
     font-weight: 600;
     line-height: 146.187%;
-    margin-bottom: 10px;
   }
 
   // .hero__sub-title
   &__sub-title {
     color: #b9b9b9;
     font-family: "Inter";
-    font-size: 18px;
+    font-size: toRem(18); //18px;
+	margin-bottom: toEm(18, 35); //35px;
     font-weight: 500;
     line-height: 146.187%;
-    margin-bottom: 35px;
+	@media (max-width: toEm(767)){
+		font-size: toRem(17); //18px;
+	}
   }
 
   // .hero__button
   &__button {
     display: flex;
+	margin-bottom: toRem(20); //20px;
+	@media (max-width: toEm(767)){
+		flex-direction: column;
+		gap: toRem(20);
+	}
   }
 
   // .hero__left
   &__left {
-    padding: 27px 21px;
+    padding: toRem(27, 21); //27px 21px;
     background-color: #40ddb6;
     color: #37393f;
     text-align: center;
     font-family: "Inter";
-    font-size: 18px;
+    font-size: toRem(18); //18px;
     font-weight: 600;
     text-transform: capitalize;
-    margin-right: 30px;
+    margin-right: toRem(30); //30px;
+	transition: 0.4s;
+	border: 1px solid transparent;
+	&:hover {
+		background-color: #ffffff31;
+		color: #ffffff;
+		border: 1px solid #40DDB6;
+	}
   }
 
   // .hero__right
   &__right {
-    color: #fff;
+    color: #ffffff;
     text-align: center;
+	align-items: center;
     font-family: "Inter";
-    font-size: 18px;
+    font-size: toRem(18); //18px;
     font-weight: 600;
     text-transform: capitalize;
+	text-decoration: underline;
     display: flex;
-    gap: 10px;
+    gap: toRem(10); //10px;
     &::before {
       content: "";
       display: inline-block;
@@ -120,9 +169,9 @@ body {
       background-position: 0 0;
       background-repeat: no-repeat;
       background-size: contain;
-      width: 60px;
-      height: 60px;
-      flex: 0 0 60px;
+      width: toRem(60); //60px
+      height: toRem(60); //60px
+      flex: toRem(0 0 60); //60px
     }
   }
 }
