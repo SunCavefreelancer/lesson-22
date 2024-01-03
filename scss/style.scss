@@ -30,7 +30,7 @@ body {
 
 // для усіх "__container" однаково
 [class*="__container"] {
-  	max-width: toRem(1270); /* 1240 + 15 + 15 */
+  	max-width: toRem(1250); /* 1220 + 15 + 15 */
 	margin: 0 auto;
   /* 	max-width: #{$containerWidth}px; */
 	padding-left: toRem(15);
@@ -105,6 +105,17 @@ body {
 	margin-bottom: toEm(10, 18); //10px от 18px размера шрифта;
     font-weight: 600;
     line-height: 146.187%;
+	display: flex;
+	gap: toRem(6);
+	&::before {
+		content: "";
+		display: inline-block;
+		width: toRem(12);
+		height: toRem(12);
+		flex: 0 0 toRem(12);
+		background-color: #40DDB6;
+		transform: translateY(toRem(6));
+	}
   }
 
   // .hero__sub-title
@@ -171,7 +182,276 @@ body {
       background-size: contain;
       width: toRem(60); //60px
       height: toRem(60); //60px
-      flex: toRem(0 0 60); //60px
+      flex: 0 0 toRem(60); //60px
     }
   }
+}
+
+
+//---------------------------------------------------------------------------------------------------
+.welcome {
+	padding: toRem(150) toRem(0) toRem(50);		//другий toRem(0) повторюється для обох сторін
+	&__fon {
+		background-color: #F4F4F4;
+		max-width: toRem(825);
+		min-height: toRem(983);
+		margin-top: toRem(-150);
+		@media(max-width:toEm(1200)){
+			max-width: toRem(550);
+			min-height: toRem(583);
+			margin-top: toRem(150);
+			background-color: transparent;
+		}
+		@media (max-width: toEm(767)){
+			max-width: toRem(415);
+		}
+
+	}
+	&__container {
+		position: relative;
+		z-index: 2;
+		margin-top: toRem(-833);
+		@media (max-width:toRem(450)){
+			margin-top: toRem(-850);
+		}
+	}
+	// .welcome__body
+	&__body {
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+		@media (max-width:toEm(992)){
+			grid-template-columns: repeat(1, 1fr);
+			gap: toRem(50);
+		}
+	}
+
+	// .welcome__left
+	&__left {
+		max-width: toRem(400);
+		@media (max-width:toEm(992)) {
+			max-width: toRem(950);
+		}
+		& > *:last-child {
+			margin-bottom: toEm(0);
+		}
+	}
+
+	// .welcome__img
+	&__img {
+		margin-bottom: toRem(19);
+	}
+	&__img img{
+		width: 100%;
+		height: 100%;
+		aspect-ratio: 410 / 466;
+		@media (max-width:toEm(430)){
+			aspect-ratio: 210 / 226;
+		}
+	}
+
+	// .welcome__title
+	&__title {
+		color: #37393F;
+		font-family: 'Poppins';
+		font-size: toRem(30);
+		margin-bottom: toEm(13, 30);
+		font-weight: 600;
+		line-height: 121%;
+		@media (max-width:toRem(430)){
+			font-size: toRem(22);
+		}
+	}
+
+	// .welcome__sub-title
+	&__sub-title {
+		color: #7D7D7D;
+		font-family: 'Inter';
+		font-size: toRem(18);
+		margin-bottom: toEm(15);
+		font-weight: 400;
+		line-height: 146.187%;
+		@media (max-width:toRem(430)){
+			font-size: toRem(16);
+		}
+	}
+
+	// .welcome__button
+	&__button{
+		color: #37393F;
+		text-align: center;
+		font-family: 'Inter';
+		font-size: toRem(18);
+		margin-bottom: toEm(10, 18);
+		font-weight: 600;
+		line-height: 122%;
+		text-transform: capitalize;
+		transition: 0.4s;
+		&:hover {
+			color: #6B77E5;
+			text-decoration: underline;
+		}
+	}
+}
+.right {
+	& > *:last-child {
+		margin-bottom: toRem(0);
+	}
+		// .right__button
+		&__button {
+			display: inline-block;
+			padding: toRem(21) toRem(27);
+			color: #FFF;
+			text-align: center;
+			font-family: 'Inter';
+			font-size: toRem(18);
+			margin-bottom: toRem(10, 18);
+			font-weight: 600;
+			line-height: normal;
+			text-transform: capitalize;
+			background-color: #6B77E5;
+			border: toRem(1) solid transparent;
+			transition: 0.5s;
+			&:hover {
+				background-color: transparent;
+				border: toRem(1) solid #6B77E5;
+				color: #6B77E5;
+			}
+		}
+	& h2 {
+		color: #37393F;
+		font-family: 'Poppins';
+		font-size: toRem(40);
+		margin-bottom: toEm(20, 40);
+		font-weight: 700;
+		line-height: 121%; /* 48.4px */
+		@media (max-width:toEm(640)){
+			font-size: toRem(30);
+		}
+		@media (max-width:toEm(380)){
+			font-size: toRem(25);
+		}
+	}
+
+	// .right__title
+	&__title {
+		color: #37393F;
+		font-family: 'Inter';
+		font-size: 18px;
+		margin-bottom: toEm(16, 18);
+		font-weight: 500;
+		line-height: 122%;
+		display: flex;
+		gap: toRem(6);
+		&::before {
+			content: "";
+			display: inline-block;
+			width: toRem(12);
+			height: toRem(12);
+			flex: 0 0 toRem(12);
+			background-color: #40DDB6;
+			transform: translateY(toRem(3));
+		}
+	}
+
+	// .right__sub-title
+	&__sub-title {
+		color: #7D7D7D;
+		font-family: 'Inter';
+		font-size: toRem(18);
+		margin-bottom: toEm(20, 18);
+		font-weight: 400;
+		line-height: 146.187%; /* 26.314px */
+		& > *:not(:last-child) {
+			margin-bottom: toEm(15);
+		}
+	}
+
+	// .right__list
+	&__list {
+		margin-bottom: toEm(43);
+	}
+
+	// .right__link
+	&__link {
+		color: #37393F;
+		font-family: 'Poppins';
+		font-size: toRem(20);
+		margin-bottom: toEm(23, 20);
+		line-height: normal;
+		display: flex;
+		gap: toRem(8);
+		&::before {
+			content: "";
+			display: inline-block;
+			width: toRem(27);
+			height: toRem(27);
+			flex: 0 0 toRem(27);
+			background-image: url(../img/Vector01.svg);
+			background-repeat: no-repeat;
+			background-position: 0 0;
+			background-size: contain;
+			transform: translateY(toRem(2));
+			border: toRem(1) solid transparent;
+			border-radius: 50%;
+			transition: 0.4s;
+			@media (max-width:toEm(640)){
+				width: toRem(20);
+				height: toRem(20);
+				flex: 0 0 toRem(20);
+				transform: translateY(toRem(5));
+			}
+		}
+		&:hover::before {
+			border: toRem(1) solid #40DDB6;
+			transform: translateY(5px);
+		}
+		@media (max-width:toEm(640)){
+			font-size: toRem(18);
+		}
+	}
+
+	// .right__cards
+	&__cards {
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+		gap: toRem(21);
+		margin-bottom: toEm(37, 21);
+		@media (max-width:toRem(1235)){
+			grid-template-columns: repeat(1, 1fr);
+			gap: toRem(10);
+		}
+	}
+
+	// .right__item
+	&__item {
+		display: flex;
+		border: 1px solid #E3E3E3;
+		&:nth-child(1) {
+			padding: toRem(32) toRem(31);
+		}
+		&:nth-child(2) {
+			padding: toRem(37) toRem(32);
+		}
+	}	
+	&__icon {
+		transform: translateY(toRem(5));
+		margin-right: toRem(19);
+
+	}
+		& h3 {
+			color: #37393F;
+			font-family: 'Poppins';
+			font-size: toRem(20);
+			margin-bottom: toEm(5, 20);
+			font-weight: 600;
+			line-height: normal;
+			gap: toRem(19);
+		}
+		& p {
+			color: #7D7D7D;
+			font-family: 'Inter';
+			font-size: toRem(16);
+			font-weight: 400;
+			line-height: 135.187%; /* 21.63px */
+		}
 }
