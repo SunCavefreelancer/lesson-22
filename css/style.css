@@ -779,3 +779,207 @@ body {
 .provide__button:hover {
   color: #40DDB6;
 }
+
+.why {
+  padding: 5.375rem 0rem 3.125rem;
+  background: url(../img/Background.webp) left no-repeat, url(../img/Background02.webp) right no-repeat;
+}
+@media (max-width: 33.75em) {
+  .why {
+    padding: 1.875rem 0rem 1.875rem;
+  }
+}
+.why__container {
+  max-width: 38.125em;
+  margin-left: 20.625rem;
+}
+@media (max-width: 75em) {
+  .why__container {
+    margin-left: 14.375rem;
+  }
+}
+@media (max-width: 62em) {
+  .why__container {
+    margin-left: 6.25rem;
+  }
+}
+@media (max-width: 47.9375em) {
+  .why__container {
+    margin-left: 0.625rem;
+  }
+}
+.why__text h3 {
+  color: #FFF;
+  font-family: "Inter";
+  font-size: 1.125rem;
+  margin-bottom: 0.7222222222em;
+  font-weight: 500;
+  line-height: 122%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 0.5rem;
+}
+.why__text h3::before {
+  content: "";
+  display: inline-block;
+  width: 0.75rem;
+  height: 0.75rem;
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 0.75rem;
+          flex: 0 0 0.75rem;
+  background-color: #40DDB6;
+  -webkit-transform: translateY(0.25rem);
+      -ms-transform: translateY(0.25rem);
+          transform: translateY(0.25rem);
+}
+@media (max-width: 33.75em) {
+  .why__text h3 {
+    font-size: 1rem;
+  }
+}
+.why__title {
+  color: #FFF;
+  font-family: "Poppins";
+  font-size: 1.875rem;
+  margin-bottom: 0.4333333333em;
+  font-weight: 600;
+  line-height: 124%;
+}
+@media (max-width: 33.75em) {
+  .why__title {
+    font-size: 1.5625rem;
+  }
+}
+.why__sub-title {
+  color: #FFF;
+  font-family: "Inter";
+  font-size: 1.125rem;
+  margin-bottom: 2em;
+  line-height: 146.187%; /* 26.314px */
+}
+@media (max-width: 33.75em) {
+  .why__sub-title {
+    font-size: 1rem;
+  }
+}
+.why__cards {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.9375rem;
+  margin-bottom: 2.25em;
+}
+@media (max-width: 47.9375em) {
+  .why__cards {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+@media (max-width: 33.75em) {
+  .why__cards {
+    margin-bottom: 1.25em;
+  }
+}
+.why__item {
+  padding: 1.875rem 1.6875rem;
+  background-color: #2E2F34;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+@media (max-width: 33.75em) {
+  .why__item {
+    padding: 1.0625rem 1.25rem;
+  }
+}
+.why__img img {
+  max-width: 100%;
+}
+.why__body {
+  margin-left: 0.75rem;
+  padding: 0.9375rem 0rem;
+}
+.why__body > *:last-child {
+  margin-bottom: 0em;
+}
+.why__category {
+  color: #FFF;
+  font-family: "Inter";
+  font-size: 1rem;
+  margin-bottom: 0.3125em;
+  font-weight: 400;
+  line-height: 136%;
+}
+.why__description {
+  color: #FFF;
+  font-family: "Poppins";
+  font-size: 1.125rem;
+  margin-bottom: 0.2777777778em;
+  font-weight: 600;
+  line-height: 150%;
+}
+@media (max-width: 33.75em) {
+  .why__description {
+    font-size: 1rem;
+  }
+}
+.why__content {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  -webkit-column-gap: 2.3125rem;
+     -moz-column-gap: 2.3125rem;
+          column-gap: 2.3125rem;
+  row-gap: 1.4375rem;
+}
+@media (max-width: 33.75em) {
+  .why__content {
+    grid-template-columns: repeat(1, 1fr);
+    row-gap: 0.9375rem;
+  }
+}
+.why__marcs b {
+  color: #FFF;
+  font-family: "Poppins";
+  font-size: 1.25rem;
+  margin-bottom: 0.25em;
+  font-weight: 700;
+  line-height: 165%;
+}
+@media (max-width: 33.75em) {
+  .why__marcs b {
+    font-size: 1rem;
+  }
+}
+.why__marcs p {
+  color: #FFF;
+  font-family: "Poppins";
+  font-size: 1.25rem;
+  margin-bottom: 0.25em;
+  line-height: 165%;
+}
+@media (max-width: 33.75em) {
+  .why__marcs p {
+    font-size: 1.125rem;
+  }
+}
+.why__marcs span {
+  color: #FFB342;
+  font-family: "Poppins";
+  font-size: 1.25rem;
+  margin-bottom: 0.25em;
+  line-height: 165%;
+}
+.why__button {
+  color: #40DDB6;
+  text-align: center;
+  font-family: "Inter";
+  font-size: 1.125rem;
+  font-weight: 600;
+  line-height: 165%;
+  text-transform: capitalize;
+  text-decoration: underline;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+.why__button:hover {
+  background-color: #6B77E5;
+}
